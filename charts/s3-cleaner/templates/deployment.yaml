@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: s3-cleaner
+  namespace: s3-cleaner
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: s3-cleaner
+  template:
+    metadata:
+      labels:
+        app: s3-cleaner
+    spec:
+      serviceAccountName: s3-cleaner-sa
+      containers:
+      - name: s3-cleaner
+        image: elimayost/s3_cleaner
+        imagePullPolicy: Always
+        resources:
+        {{- if not .Values.resources }}
+          requests:
+            cpu: 500m
+            memory: 256Mi
+          limits:
+            cpu: 500m
+            memory: 512Mi
+        {{- else }}
+          {{- toYaml .Values.resources | nindent 10 }}
+        {{- end }}

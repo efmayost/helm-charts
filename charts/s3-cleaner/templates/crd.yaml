@@ -1,0 +1,39 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: s3-cleaners.sre.core
+spec:
+  group: sre.core
+  names:
+    kind: S3Cleaner
+    plural: s3-cleaners
+    singular: s3-cleaner
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        properties:
+          spec:
+            properties:
+              bucket:
+                type: string
+              path:
+                type: string
+              schedule:
+                type: string
+              secret:
+                type: string
+              include-filter:
+                type: string
+              extra-args:
+                type: string
+            required:
+            - bucket
+            - path
+            - schedule
+            - secret
+            type: object
+        type: object
+    served: true
+    storage: true

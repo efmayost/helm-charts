@@ -1,0 +1,9 @@
+apiVersion: v2
+name: s3_cleaner
+description: A Helm chart for a generic S3 cleaner
+
+type: application
+version: 0.0.1
+appVersion: "latest"
+
+

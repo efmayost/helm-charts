@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: s3-cleaner-clusterrolebinding
+subjects:
+  - kind: ServiceAccount
+    name: s3-cleaner-sa
+    namespace: s3-cleaner
+roleRef:
+  kind: ClusterRole
+  name: s3-cleaner-clusterrole
+  apiGroup: rbac.authorization.k8s.io

@@ -1,0 +1,8 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: s3-cleaner-clusterrole
+rules:
+  - apiGroups: ["sre.core"]  # Match CRD's API group
+    resources: ["s3-cleaners"]
+    verbs: ["get", "list", "watch"]

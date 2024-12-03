@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: s3-cleaner-rolebinding
+  namespace: s3-cleaner
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: s3-cleaner-role
+subjects:
+  - kind: ServiceAccount
+    name: s3-cleaner-sa
+    namespace: s3-cleaner
