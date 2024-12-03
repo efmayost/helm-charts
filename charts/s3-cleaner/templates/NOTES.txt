@@ -3,14 +3,12 @@
 
 Chart {{ .Chart.Name }} installed.
 
-The release is named {{ .Release.Name }}.
-
 To learn more about the release, try:
 
-  $ helm status {{ .Release.Name }}
-  $ helm get all {{ .Release.Name }}
+  $ helm status s3-cleaner
+  $ helm get all s3-cleaner
 
 Check that the s3-cleaner watchers are running:
 
-  $ kubectl -n s3-cleaner logs -f deployments/{{ .Release.Name }}
+  $ kubectl -n s3-cleaner logs -f deployments/s3-cleaner
 
