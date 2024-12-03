@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  s3_cleaner:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2024-12-03T12:26:27.361217917Z"
+    description: A Helm chart for a generic S3 cleaner
+    digest: b2aff662fb6c391d1f836c3d30751f1ae7c826f071688caf13467fa651b3f434
+    name: s3_cleaner
+    type: application
+    urls:
+    - https://github.com/efmayost/helm-charts/releases/download/s3_cleaner-0.0.1/s3_cleaner-0.0.1.tgz
+    version: 0.0.1
+generated: "2024-12-03T12:26:27.361227795Z"
